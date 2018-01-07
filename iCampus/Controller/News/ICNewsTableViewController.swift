@@ -9,26 +9,23 @@
 import UIKit
 import MJRefresh
 
-protocol ICNewsViewCell {
+@objc protocol ICNewsViewCell {
     func update(news: ICNews)
-}
-
-protocol ICNewsParentDelegate {
-    func hideNavigationBar(hide: Bool)
 }
 
 class ICNewsTableViewController: UITableViewController {
     
-    var delegate: ICNewsParentDelegate?
-    var page = 1
+    var page = 0
     var channel: ICNewsChannel
     var news = [ICNews]()
     let nibNames = ["ICNoneImageViewCell", "ICSimpleImageViewCell"]
+    var backImageView:UIImageView
     
     init(category: String, title: String) {
         channel = ICNewsChannel()
         channel.listKey = category
         channel.title = title
+        backImageView = UIImageView.init()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,22 +33,31 @@ class ICNewsTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         title = channel.title
         for nibName in nibNames {
             tableView.register(UINib(nibName: nibName, bundle: Bundle.main), forCellReuseIdentifier: nibName)
         }
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = 80//UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 250
+        //原数据为80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
         tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: #selector(loadMore))
-        refresh()
+        
+        backImageView = UIImageView.init(frame: CGRect(x:(tableView.frame.size.width - 100)/2, y:UIScreen.main.bounds.size.height * 0.3, width:100, height:100))
+        backImageView.image = UIImage.init(named: "logo")
+        tableView.addSubview(backImageView)
+        tableView.sendSubview(toBack: backImageView)
+        
+        tableView.estimatedSectionHeaderHeight = 0;
+        tableView.estimatedSectionFooterHeight = 0;
     }
-    
-    // MARK: - Table view data source
 
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -68,6 +74,7 @@ class ICNewsTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: nibNames[1], for: indexPath)
         }
         (cell as! ICNewsViewCell).update(news: news[indexPath.row])
+         cell.selectionStyle = .none;
         return cell
     }
     
@@ -78,19 +85,18 @@ class ICNewsTableViewController: UITableViewController {
     }
     
     func refresh() {
-        ICNews.fetch(channel, page: 1,
+        ICNews.fetch(channel, page: 0,
                      success: {
                         [weak self] data in
+                        self?.backImageView.isHidden = true
                         self?.tableView.mj_header.endRefreshing()
                         self?.news = data as! [ICNews]
-                        self?.tableView.separatorStyle = .singleLine
                         self?.tableView.reloadData()
-                        self?.page = 2
+                        self?.page = 1
             },
                      failure: {
                         [weak self] _ in
                         self?.tableView.mj_header.endRefreshing()
-                        self?.tableView.separatorStyle = .singleLine
         })
     }
     
@@ -100,34 +106,20 @@ class ICNewsTableViewController: UITableViewController {
                         [weak self] data in
                         self?.tableView.mj_footer.endRefreshing()
                         self?.news.append(contentsOf: data as! [ICNews])
-                        self?.tableView.separatorStyle = .singleLine
                         self?.tableView.reloadData()
                         self?.page += 1
             },
                      failure: {
-                        [weak self] _ in
+                        [weak self] error in
                         self?.tableView.mj_footer.endRefreshing()
-                        self?.tableView.separatorStyle = .singleLine
         })
     }
     
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        navigationController?.pushViewController(ICNewsDetailViewController(news: news[indexPath.row]), animated: true)
+        let newsDetailView:ICNewsDetailViewController = ICNewsDetailViewController(news: news[indexPath.row])
+        newsDetailView.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(newsDetailView, animated: true)
     }
-
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
-        let threshold: CGFloat = 200
-        if offset > 0 && velocity < 0 {
-            delegate?.hideNavigationBar(hide: true)
-        }
-        if velocity >= threshold {
-            delegate?.hideNavigationBar(hide: false)
-        }
-    }
-    
 }

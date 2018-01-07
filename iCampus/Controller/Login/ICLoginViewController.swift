@@ -30,6 +30,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var emailPostionConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginButtonPostionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginBGView: UIView!
     @IBOutlet weak var switchButton: UIButton!//switch between login and register
     lazy var state: ICLoginViewControllerState = {
         return .login
@@ -87,30 +88,86 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         sender.isEnabled = false
         sender.backgroundColor = .gray
         messageLabel.text = ""
-        loginIndicatorView.isHidden = false
+        view.endEditing(true)
         if state == .login {
-            //            login
+            userLogin()
+        } else {
+            userRegister()
+        }
+    }
+    
+    func userLogin() {
+        if emailField.text?.range(of: "@") != nil {
+            if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
+                PJHUD.show(withStatus: "")
+                ICLoginManager.login(emailField.text,
+                                     password: passwordField.text,
+                                     success: {
+                                        [weak self] data in
+                                        if let self_ = self {
+                                            let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                                            controller.view.frame = UIScreen.main.bounds
+                                            PJHUD.dismiss()
+                                            self_.dismiss(animated: true,
+                                                          completion: {
+                                                NotificationCenter.default.post(
+                                                    name: NSNotification.Name("UserDidLoginNotification"),
+                                                    object: nil)
+                                            })
+                                        }
+                    }, failure: {
+                        [weak self] message in
+                        if let self_ = self {
+                            if message == "Request failed: unauthorized (401)" {
+                                self_.messageLabel.text = "密码错误"
+                            }
+                            self_.finishedLoginOrRegister()
+                            PJHUD.dismiss()
+                        }
+                })
+            } else {
+                messageLabel.text = "密码长度最少6个字符"
+                finishedLoginOrRegister()
+            }
+        } else {
+            messageLabel.text = "邮箱格式错误"
+            finishedLoginOrRegister()
+        }
+    }
+    
+    func userRegister() {
+        if (phoneField.text?.lengthOfBytes(using: String.Encoding.ascii)) == 11 {
             if emailField.text?.range(of: "@") != nil {
                 if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
-                    ICLoginManager.login(emailField.text,
-                                         password: passwordField.text,
-                                         success: {
-                                            [weak self] data in
-                                            if let self_ = self {
-                                                let controller = ICGateViewController(collectionViewLayout: UICollectionViewFlowLayout())
-                                                controller.view.frame = UIScreen.main.bounds
-                                                let navcontroller = UINavigationController(rootViewController: controller)
-                                                self_.present(navcontroller, animated: true, completion: nil)
-                                                self_.finishedLoginOrRegister()
-                                            }
-                        },
-                                         failure: {
-                                            [weak self] message in
-                                            if let self_ = self {
-                                                self_.messageLabel.text = message
-                                                self_.finishedLoginOrRegister()
-                                            }
-                    })
+                    if passwordField.text == verfyPasswordField.text {
+                        PJHUD.show(withStatus: "")
+                        ICLoginManager.signUp(emailField.text,
+                                              password: passwordField.text,
+                                              phone: phoneField.text,
+                                              verfyCode: verfyCodeField.text, success: { [weak self] (data) in
+                                                if let self_ = self {
+                                                    self_.messageLabel.text = "success"
+                                                    self_.finishedLoginOrRegister()
+                                                    self_.finishedLoginOrRegister()
+                                                    PJHUD.dismiss()
+                                                    self_.switchStatus(self_.switchButton)
+                                                    self_.loginOrRegister(self_.loginAndRegisterButton)
+                                                }
+                            }, failure: { [weak self] error in
+                                if let self_ = self {
+                                    if error == "Request failed: unauthorized (400)" {
+                                        self_.messageLabel.text = "邮箱已存在"
+                                    } else {
+                                        self_.messageLabel.text = error
+                                    }
+                                    self_.finishedLoginOrRegister()
+                                    PJHUD.dismiss()
+                                }
+                        })
+                    } else {
+                        messageLabel.text = "两次输入的密码不一样"
+                        finishedLoginOrRegister()
+                    }
                 } else {
                     messageLabel.text = "密码长度最少6个字符"
                     finishedLoginOrRegister()
@@ -120,50 +177,14 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                 finishedLoginOrRegister()
             }
         } else {
-            //register
-            if (phoneField.text?.lengthOfBytes(using: String.Encoding.ascii)) == 11 {
-                if emailField.text?.range(of: "@") != nil {
-                    if (passwordField.text?.lengthOfBytes(using: String.Encoding.ascii))! >= 6 {
-                        if passwordField.text == verfyPasswordField.text {
-                            ICLoginManager.signUp(emailField.text,
-                                                  password: passwordField.text,
-                                                  phone: phoneField.text,
-                                                  verfyCode: verfyCodeField.text, success: { [weak self] (data) in
-                                                    if let self_ = self {
-                                                        self_.messageLabel.text = "success"
-                                                        self_.finishedLoginOrRegister()
-                                                    }
-                                },
-                                                  failure: { [weak self] error in
-                                                    if let self_ = self {
-                                                        self_.messageLabel.text = error
-                                                        self_.finishedLoginOrRegister()
-                                                    }
-                            })
-                        } else {
-                            messageLabel.text = "两次输入的密码不一样"
-                            finishedLoginOrRegister()
-                        }
-                    } else {
-                        messageLabel.text = "密码长度最少6个字符"
-                        finishedLoginOrRegister()
-                    }
-                } else {
-                    messageLabel.text = "邮箱格式错误"
-                    finishedLoginOrRegister()
-                }
-            } else {
-                messageLabel.text = "手机号格式错误"
-                finishedLoginOrRegister()
-            }
-            
+            messageLabel.text = "手机号格式错误"
+            finishedLoginOrRegister()
         }
     }
     
     func finishedLoginOrRegister() {
         loginAndRegisterButton.isEnabled = true
         loginAndRegisterButton.backgroundColor = buttonColor
-        loginIndicatorView.isHidden = true
     }
     
     @IBAction func forgetPassword(_ sender: UIButton) {
@@ -177,7 +198,7 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                 [weak self] message in
                 alertVC.dismiss(animated: true, completion: nil)
                 if let self_ = self {
-                    self_.messageLabel.text = "一封电子邮件已发送至您的电子邮件地址"
+                    self_.messageLabel.text = "邮件已发送至您的邮箱"
                 }
                 }, failure: {
                     [weak self] message in
@@ -202,19 +223,18 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                                          repeats: true)
             ICLoginManager.fetchVerfyCode(phoneField.text,
                                           success: {
-            },
-                                          failure: {
-                                            [weak self] message in
-                                            if let self_ = self {
-                                                self_.timer = nil
-                                                self_.verfyCodeFetchedTime = nil
-                                                self_.verfyCodeButton.isEnabled = true
-                                                self_.verfyCodeButton.backgroundColor = self_.buttonColor
-                                                self_.verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
-                                                self_.messageLabel.text = message
-                                            }
+                                            
+            }, failure: {
+                [weak self] message in
+                if let self_ = self {
+                    self_.timer = nil
+                    self_.verfyCodeFetchedTime = nil
+                    self_.verfyCodeButton.isEnabled = true
+                    self_.verfyCodeButton.backgroundColor = self_.buttonColor
+                    self_.verfyCodeButton.setTitle("验证码", for: UIControlState.normal)
+                    self_.messageLabel.text = message
+                }
             })
-            
         }
     }
     
@@ -227,10 +247,14 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
                 timer = nil
                 verfyCodeFetchedTime = nil
                 verfyCodeButton.isEnabled = true
-                verfyCodeButton.backgroundColor = loginAndRegisterButton.backgroundColor
-                verfyCodeButton.setTitle("获取验证码", for: UIControlState.normal)
+                verfyCodeButton.backgroundColor = UIColor.init(red: 15/255.0, green: 128/255.0, blue: 1, alpha: 1)
+                verfyCodeButton.setTitle("验证码", for: UIControlState.normal)
             }
         }
+    }
+    
+    @IBAction func notLoginYet(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func awakeFromNib() {
@@ -243,6 +267,62 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
         verfyCodeButton.backgroundColor = loginAndRegisterButton.backgroundColor
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
+        emailField.delegate = self;
+        emailField.returnKeyType = .next
+        
+        passwordField.delegate = self
+        passwordField.returnKeyType = .done
+        passwordField.tag = 10
+        
+        verfyPasswordField.delegate =  self
+        verfyPasswordField.returnKeyType = .done
+        
+        setTextFieldStyle(emailField)
+        setTextFieldStyle(phoneField)
+        setTextFieldStyle(passwordField)
+        setTextFieldStyle(verfyCodeField)
+        setTextFieldStyle(verfyPasswordField)
+        
+        loginBGView.backgroundColor = UIColor.black;
+        loginBGView.alpha = 0.5;
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if !verfyPasswordField.isHidden {
+            passwordField.returnKeyType = .next
+        } else {
+            passwordField.returnKeyType = .done
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailField.isFirstResponder {
+            passwordField.becomeFirstResponder()
+        } else if !verfyPasswordField.isHidden && passwordField.isFirstResponder {
+            verfyPasswordField.becomeFirstResponder()
+        }
+        
+        if textField.tag == 10 {
+            userLogin()
+        }
+        
+        return true
+    }
+    
+    func setTextFieldStyle(_ textField:UITextField) {
+        let FieldLine = UIView.init(frame: CGRect(x:0, y:39, width:textField.frame.size.width, height:1))
+        FieldLine.backgroundColor = UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+        textField.addSubview(FieldLine)
+        textField.attributedPlaceholder = NSAttributedString.init(string: textField.placeholder!, attributes: {[
+            NSForegroundColorAttributeName : UIColor.init(red: 180/255.0, green: 180/255.0, blue: 180/255.0, alpha: 1)
+            ]}())
+        textField.tintColor = UIColor.white
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func keyboardWillChangeFrame(notification: Notification) {
@@ -262,6 +342,10 @@ class ICLoginViewController: UIViewController, UITextFieldDelegate {
     
     func didTouchBlankArea() {
         view.endEditing(true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
 }

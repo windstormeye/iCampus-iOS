@@ -10,8 +10,7 @@
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
 
-@implementation PJLostTableViewCell
-{
+@implementation PJLostTableViewCell {
     NSArray *_kDataArr;   // 存储最终转化好的ImgURL
 }
 
@@ -21,24 +20,13 @@
 }
 
 - (void)setFrame:(CGRect)frame {
-    frame.size.height -= 8;    // 减掉的值就是分隔线的高度
+    frame.origin.y += 10;
+    frame.size.height -= 10;    // 减掉的值就是分隔线的高度
     [super setFrame:frame];
 }
 
 - (void)initView {
     _kDataArr = [@[] mutableCopy];
-    _detailsLabel.font = [UIFont systemFontOfSize:14];
-    _detailsLabel.textColor = [UIColor lightGrayColor];
-    _nameLabel.textColor = [UIColor lightGrayColor];
-    _nameLabel.font = [UIFont systemFontOfSize:14];
-    _phoneLabel.textColor = [UIColor lightGrayColor];
-    _phoneLabel.font = [UIFont systemFontOfSize:14];
-    _timeLabel.font = [UIFont systemFontOfSize:14];
-    _timeLabel.textColor = [UIColor lightGrayColor];
-    
-    [_callBtn setImage:[UIImage imageNamed:@"call"] forState:UIControlStateNormal];
-    [_callBtn setTitle:@"" forState:UIControlStateNormal];
-    [_callBtn addTarget:self action:@selector(callBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)callBtnClick {
@@ -50,7 +38,6 @@
     _detailsLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"details"]];
     _timeLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"createTime"]];
     _nameLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"author"]];
-    _phoneLabel.text = [NSString stringWithFormat:@"%@", dataSource[@"phone"]];
     [self initScrollView:[self setupImgArr:dataSource[@"imgUrlList"]]];
 }
 
@@ -61,6 +48,7 @@
     for (int i = 0; i < dataArr.count; i++) {
         NSString *webSite = [ICNetworkManager defaultManager].website;
         webSite = [NSString stringWithFormat:@"%@%@?api_key=%@&session_token=%@", webSite, dataArr[i][@"url"], [ICNetworkManager defaultManager].APIKey, [ICNetworkManager defaultManager].token];
+        
         [newArr addObject:webSite];
     }
     _kDataArr = [newArr mutableCopy];
@@ -73,9 +61,11 @@
     }
     CGFloat imgW = (SCREEN_WIDTH - 30) / 3;
     CGFloat imgH = imgW;
+    _scrollViewHeighConstraint.constant = imgH + 10;
     CGFloat marginX = 7.5;
     int itemNums = 0;
     CGFloat lastItemMaxX = 0;
+    CGFloat scViewWidth = 0;
     
     for (int i = 0; i < dataArr.count; i++) {
         CGFloat itemX = marginX + (imgH+marginX) * itemNums;
@@ -90,7 +80,13 @@
         [imageView addGestureRecognizer:tap];
         imageView.tag = 100 + i;
         imageView.userInteractionEnabled = true;
+        scViewWidth += imgW;
     }
+    scViewWidth += 15;
+    if (scViewWidth > SCREEN_WIDTH) {
+        scViewWidth = SCREEN_WIDTH;
+    }
+    _scrollerViewWidth.constant = scViewWidth;
     self.showImgScrollView.showsHorizontalScrollIndicator = NO;
     [self.showImgScrollView setContentSize:CGSizeMake(lastItemMaxX, 0)];
 }

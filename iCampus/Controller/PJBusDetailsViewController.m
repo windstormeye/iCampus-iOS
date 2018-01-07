@@ -15,14 +15,17 @@
 
 @end
 
-@implementation PJBusDetailsViewController
-{
+@implementation PJBusDetailsViewController {
     PJBusDetailsTableView *_kTableView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [PJHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {

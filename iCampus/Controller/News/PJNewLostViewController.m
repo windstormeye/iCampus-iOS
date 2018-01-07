@@ -7,21 +7,15 @@
 //
 
 #import "PJNewLostViewController.h"
-#import "logoutFoot.h"
 #import "PJUIImage+Extension.h"
 #import "ICNetworkManager.h"
-
-//#import "AFHTTPRequestOperationManager.h"
-
 
 @interface PJNewLostViewController () <PJZoomImageScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @end
 
-@implementation PJNewLostViewController
-{
+@implementation PJNewLostViewController {
     UITableView *_kTableView;
-    logoutFoot *footer;
 }
 
 - (void)viewDidLoad {
@@ -35,6 +29,7 @@
 
 - (void)initView {
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.title = @"添加失物招领";
     
     _kTableView = [UITableView new];
@@ -43,27 +38,16 @@
     _imgScrollView.myDelegate = self;
     _detailsTextView.delegate = self;
     _nameTextField.delegate = self;
+    _nameTextField.enabled = false;
+    _nameTextField.text = [NSString stringWithFormat:@"%@",[PJUser currentUser].first_name];
     _phoneTextField.delegate = self;
     
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
-    footer = views.firstObject;
-    footer.backgroundColor = [UIColor clearColor];
-    footer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
-    _kTableView.tableFooterView = footer;
-    footer.logoutBtn.backgroundColor = mainDeepSkyBlue;
-    [footer.logoutBtn setTitle:@"添加" forState:0];
-    [footer.logoutBtn addTarget:self action:@selector(uploadLost) forControlEvents:1<<6];
-
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pushLost"] style:UIBarButtonItemStylePlain target:self action:@selector(uploadLost)];
 }
 
 - (void)uploadLost {
     NSString *phoneNum = _phoneTextField.text;
-    NSString *nameStr = _nameTextField.text;
     NSString *detailsStr = _detailsTextView.text;
-    if ([nameStr isEqualToString:@""]) {
-        [PJHUD showErrorWithStatus:@"姓名错误"];
-        return;
-    }
     if (![self isTruePhone:phoneNum]) {
         [PJHUD showErrorWithStatus:@"号码错误"];
         return;
@@ -85,9 +69,11 @@
     [PJHUD showWithStatus:@"发布中"];
     [[ICNetworkManager defaultManager] POST:@"Add Lost Image" GETParameters:nil POSTParameters:paramters success:^(NSDictionary *dict) {
         NSArray *dataArr = dict[@"resource"];
-        NSMutableDictionary *lostDict = [@{@"details":_detailsTextView.text,
-                                   @"author":_nameTextField.text,
-                                   @"phone":_phoneTextField.text} mutableCopy];
+        NSMutableDictionary *lostDict = [@{
+                                           @"details":_detailsTextView.text,
+                                           @"author":_nameTextField.text,
+                                           @"phone":_phoneTextField.text} mutableCopy
+                                         ];
         NSMutableArray *imgURLarr = [@[] mutableCopy];
         for (NSDictionary *dict in dataArr) {
             NSString *imgurl = dict[@"path"];
@@ -101,16 +87,30 @@
         NSArray *finalArr = [@[lostDict] mutableCopy];
         [self publishNewLostWithHttp:finalArr];
     } failure:^(NSError *error) {
-        
+        [PJHUD showErrorWithStatus:@"发布失败"];
+        [PJTapic error];
     }];
 }
 
 - (void)publishNewLostWithHttp:(NSArray *)lostArr {
     [[ICNetworkManager defaultManager] POST:@"New Lost" GETParameters:nil POSTParameters:lostArr success:^(NSDictionary *dict) {
         [PJHUD showSuccessWithStatus:@"发布成功"];
+        [PJTapic succee];
+        
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        NSDictionary *dic = @{
+                               @"username":[PJUser currentUser].first_name,
+                               @"uploadtime":dateString
+                               };
+        [MobClick event:@"ibistu_lost_new" attributes:dic];
+        
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
-        NSLog(@"%@", error);
+        [PJHUD showErrorWithStatus:@"发布失败"];
+        [PJTapic error];
     }];
 }
 
@@ -205,11 +205,25 @@
     }];
 }
 
-- (void)textViewDidChange:(UITextView *)textView {
-    if ([_detailsTextView.text isEqualToString:@""]) {
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    _detailsTextViewLabel.hidden = YES;
+    return true;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
         _detailsTextViewLabel.hidden = NO;
-    } else {
-        _detailsTextViewLabel.hidden = YES;
+    }
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    _phoneTextFieldTipsLabel.hidden = YES;
+    return true;
+};
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([_phoneTextFieldTipsLabel.text isEqualToString:@""]) {
+        _phoneTextFieldTipsLabel.hidden = NO;
     }
 }
 

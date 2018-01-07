@@ -9,8 +9,7 @@
 #import "PJYellowPageTableView.h"
 #import "PJYellowPageTableViewCell.h"
 
-@implementation PJYellowPageTableView
-{
+@implementation PJYellowPageTableView {
     UISearchBar *_kSearchBar;
     NSMutableArray *_kSearchArr;
 }
@@ -34,12 +33,24 @@
     _kSearchBar = [UISearchBar new];
     _kSearchBar.delegate = self;
     _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    _kSearchBar.barTintColor = [UIColor whiteColor];
+    _kSearchBar.backgroundImage = [[UIImage alloc]init];
+    //测试
+    _kSearchBar.tag = 10086;
+    UITextField *searchField = [_kSearchBar valueForKey:@"searchField"];
+    if (searchField) {
+        searchField.backgroundColor = [UIColor whiteColor];
+        searchField.layer.borderWidth = 1;
+        searchField.layer.borderColor = RGB(200, 200, 200).CGColor;
+        searchField.layer.cornerRadius = 8.0f;
+        searchField.placeholder = @"搜索...";
+        searchField.font = [UIFont boldSystemFontOfSize:14];
+    }
     self.tableHeaderView = _kSearchBar;
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
     _dataArr = dataArr;
-    [self reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -71,8 +82,7 @@
     [_tableDelegate PJYellowPageTableViewCellClick:_dataArr[indexPath.row]];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
-{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText; {
     // 使用谓词匹配
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
     if (_kSearchArr != nil) {
@@ -85,6 +95,12 @@
         }
     }
     [self reloadData];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (scrollView.contentOffset.y < -150) {
+        [_tableDelegate PJYellowPageTableView:self scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -13,6 +13,7 @@
 @protocol PJLostTableViewDelegate <NSObject>
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
+- (void)tableViewClickToDetails:(NSDictionary *)data;
 
 @end
 
@@ -20,4 +21,6 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, weak) id<PJLostTableViewDelegate> tableDelegate;
+
+@property (nonatomic)CGFloat excursionY;
 @end

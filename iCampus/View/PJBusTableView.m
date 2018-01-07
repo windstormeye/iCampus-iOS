@@ -9,8 +9,7 @@
 #import "PJBusTableView.h"
 #import "PJBusTableViewCell.h"
 
-@implementation PJBusTableView
-{
+@implementation PJBusTableView {
     UISearchBar *_kSearchBar;
     NSMutableArray *_kSearchArr;
 }
@@ -34,6 +33,17 @@
     _kSearchBar = [UISearchBar new];
     _kSearchBar.delegate = self;
     _kSearchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+    _kSearchBar.barTintColor = [UIColor whiteColor];
+    _kSearchBar.backgroundImage = [[UIImage alloc]init];
+    UITextField *searchField = [_kSearchBar valueForKey:@"searchField"];
+    if (searchField) {
+        searchField.backgroundColor = [UIColor whiteColor];
+        searchField.layer.borderWidth = 1;
+        searchField.layer.borderColor = RGB(200, 200, 200).CGColor;
+        searchField.layer.cornerRadius = 8.0f;
+        searchField.placeholder = @"搜索...";
+        searchField.font = [UIFont boldSystemFontOfSize:14];
+    }
     self.tableHeaderView = _kSearchBar;
 }
 
@@ -56,6 +66,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJBusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJBusTableViewCell" forIndexPath:indexPath];
+    [_tableDelegate PJRegister3DtouchCell:cell];
     if (_kSearchArr.count > 0) {
         cell.cellDataSource = _kSearchArr[indexPath.row];
     } else {
@@ -69,10 +80,20 @@
     cell.selected = NO;
     [_kSearchBar resignFirstResponder];
     [_tableDelegate PJBusTableViewCellClick:_dataArr[indexPath.row]];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dict = @{
+                           @"username" : [PJUser currentUser].first_name,
+                           @"cellname" : cell.busNameLabel.text,
+                           @"time" : dateString
+                           };
+    [MobClick event:@"ibistu_bus_details" attributes:dict];
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;
-{
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText; {
     // 使用谓词匹配
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
     if (_kSearchArr != nil) {

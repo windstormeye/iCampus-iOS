@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "PJMyPublishLostTableViewCell.h"
+
 @protocol PJMyPublishLostTableViewDelegate <NSObject>
 
 - (void)tableViewClick:(NSArray *)data index:(NSInteger)index;
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)trashClick:(NSIndexPath*)indexPath;
+- (NSArray *)PJMyPublishLostTableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 @interface PJMyPublishLostTableView : UITableView <UITableViewDelegate ,UITableViewDataSource, PJMyPublishLostTableViewCellDelegate>
 
-
 @property (nonatomic, strong) NSMutableArray *tableDataArr;
+
 @property (nonatomic, weak) id<PJMyPublishLostTableViewDelegate> tableDelegate;
+
 @end

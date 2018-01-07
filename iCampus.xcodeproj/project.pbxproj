@@ -21,8 +21,6 @@
 		2CA446751EB83A1F00A0FCAF /* PJNewLost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA446741EB83A1F00A0FCAF /* PJNewLost.storyboard */; };
 		2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446771EB864A500A0FCAF /* PJZoomImageScrollView.m */; };
 		2CA4467B1EB871C400A0FCAF /* PJKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4467A1EB871C400A0FCAF /* PJKeyBoard.m */; };
-		2CA446801EB8A45E00A0FCAF /* logoutFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4467E1EB8A45E00A0FCAF /* logoutFoot.m */; };
-		2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4467F1EB8A45E00A0FCAF /* settingXIB.xib */; };
 		2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446891EB8B91900A0FCAF /* PJUIImage+Extension.m */; };
 		2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA4468C1EB8DDA900A0FCAF /* PJUser.m */; };
 		2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA446921EB8E88C00A0FCAF /* PJUserViewController.m */; };
@@ -55,11 +53,15 @@
 		2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF5CC0C1EB4C850006580D7 /* PJAboutTableViewCell.xib */; };
 		2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */; };
 		338AB0CD62DE7C24100276D4 /* Pods_iCampusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */; };
+		7486338E1FFCA2370091A10E /* PJTapic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7486338D1FFCA2370091A10E /* PJTapic.m */; };
+		74DBBE0A1FFF1DED00C70F88 /* PJCurrentPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */; };
+		74DBBE0E1FFF5B0700C70F88 /* ICNewsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE0C1FFF5B0700C70F88 /* ICNewsChannel.m */; };
+		74DBBE141FFF941700C70F88 /* PJNewsPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DBBE131FFF941700C70F88 /* PJNewsPoints.m */; };
+		A03774231FE8C9DF0051D41A /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774221FE8C9DF0051D41A /* UTDID.framework */; };
+		A03774251FE8C9E90051D41A /* UMAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774241FE8C9E90051D41A /* UMAnalytics.framework */; };
+		A03774271FE8C9F10051D41A /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03774261FE8C9F10051D41A /* UMCommon.framework */; };
 		A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B051E9690E000DDD6BC /* AppDelegate.swift */; };
-		A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B071E9690E000DDD6BC /* ViewController.swift */; };
 		A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B091E9690E000DDD6BC /* Main.storyboard */; };
-		A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */; };
-		A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B0E1E9690E000DDD6BC /* LaunchScreen.storyboard */; };
 		A90F4B1B1E9690E000DDD6BC /* iCampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B1A1E9690E000DDD6BC /* iCampusTests.swift */; };
 		A90F4B261E9690E000DDD6BC /* iCampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B251E9690E000DDD6BC /* iCampusUITests.swift */; };
 		A90F4B721E96983100DDD6BC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B711E96983100DDD6BC /* LICENSE */; };
@@ -69,12 +71,10 @@
 		A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */; };
 		A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */; };
 		A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */; };
-		A90F4B9E1E96998600DDD6BC /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B7F1E96998600DDD6BC /* MOBFoundation.framework */; };
 		A90F4B9F1E96998600DDD6BC /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B801E96998600DDD6BC /* MOBFoundationEx.framework */; };
 		A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B841E96998600DDD6BC /* ICNetworkManager.m */; };
 		A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B871E96998600DDD6BC /* ICLoginManager.m */; };
 		A90F4BA31E96998600DDD6BC /* ICNews.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B8A1E96998600DDD6BC /* ICNews.m */; };
-		A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B8C1E96998600DDD6BC /* ICNewsChannel.m */; };
 		A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B8E1E96998600DDD6BC /* ICNewsDetail.m */; };
 		A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F4B911E96998600DDD6BC /* ICGateViewCell.swift */; };
 		A90F4BA71E96998600DDD6BC /* ICGateViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90F4B921E96998600DDD6BC /* ICGateViewCell.xib */; };
@@ -88,14 +88,32 @@
 		A90F4BBC1E9733AA00DDD6BC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */; };
 		A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */; };
 		A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */; };
+		A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B7F1E96998600DDD6BC /* MOBFoundation.framework */; };
 		A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */; };
-		A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */; };
-		A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB96E1EAB5030007882AA /* ICYellowPage.m */; };
-		A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */; };
-		A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */; };
 		A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90F4B811E96998600DDD6BC /* SMS_SDK.framework */; };
 		A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9E3DC8C1E97B45F0042FBAA /* Podfile */; };
+		A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */; };
+		A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */; };
+		A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */; };
 		DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */; };
+		DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */; };
+		DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */; };
+		DAABAB0A1F98E61800E09C3B /* OXExpandingButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */; };
+		F50CDF751F935B1200264AB4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF741F935B1200264AB4 /* libsqlite3.tbd */; };
+		F50CDF771F935B2C00264AB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */; };
+		F50CDF781F9366ED00264AB4 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */; };
+		F50CDF791F9366F200264AB4 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */; };
+		F50CDF7A1F9366F700264AB4 /* UMSocialSDKPromptResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */; };
+		F50CDF7B1F9366FC00264AB4 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF701F935A1800264AB4 /* libUMSocialLog.a */; };
+		F50CDF7C1F93670100264AB4 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */; };
+		F50CDF7D1F93670300264AB4 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF731F935A1800264AB4 /* UShareUI.framework */; };
+		F50FB0D91F93889400B8CBBE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */; };
+		F50FB0DB1F93889D00B8CBBE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */; };
+		F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF691F935A1800264AB4 /* libSocialWeChat.a */; };
+		F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF631F935A1800264AB4 /* libSocialQQ.a */; };
+		F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50CDF661F935A1800264AB4 /* libSocialSina.a */; };
+		F5C73C911F9748860090D578 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5C73C901F97487B0090D578 /* Assets.xcassets */; };
+		F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C73C941F9763160090D578 /* ZKTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,9 +159,6 @@
 		2CA446771EB864A500A0FCAF /* PJZoomImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PJZoomImageScrollView.m; path = ../../View/PJZoomImageScrollView.m; sourceTree = "<group>"; };
 		2CA446791EB871C400A0FCAF /* PJKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJKeyBoard.h; sourceTree = "<group>"; };
 		2CA4467A1EB871C400A0FCAF /* PJKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJKeyBoard.m; sourceTree = "<group>"; };
-		2CA4467D1EB8A45E00A0FCAF /* logoutFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = logoutFoot.h; path = News/logoutFoot.h; sourceTree = "<group>"; };
-		2CA4467E1EB8A45E00A0FCAF /* logoutFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = logoutFoot.m; path = News/logoutFoot.m; sourceTree = "<group>"; };
-		2CA4467F1EB8A45E00A0FCAF /* settingXIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = settingXIB.xib; path = News/settingXIB.xib; sourceTree = "<group>"; };
 		2CA446881EB8B91900A0FCAF /* PJUIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PJUIImage+Extension.h"; sourceTree = "<group>"; };
 		2CA446891EB8B91900A0FCAF /* PJUIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PJUIImage+Extension.m"; sourceTree = "<group>"; };
 		2CA4468B1EB8DDA900A0FCAF /* PJUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJUser.h; sourceTree = "<group>"; };
@@ -200,15 +215,23 @@
 		2CF5CC111EB589F4006580D7 /* PJAboutDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJAboutDetailsViewController.h; sourceTree = "<group>"; };
 		2CF5CC121EB589F4006580D7 /* PJAboutDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJAboutDetailsViewController.m; sourceTree = "<group>"; };
 		2F25642BD2C1CA24DDF0C69E /* Pods-iCampusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.release.xcconfig"; sourceTree = "<group>"; };
+		7486338C1FFCA2370091A10E /* PJTapic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJTapic.h; sourceTree = "<group>"; };
+		7486338D1FFCA2370091A10E /* PJTapic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJTapic.m; sourceTree = "<group>"; };
+		74DBBE081FFF1DED00C70F88 /* PJCurrentPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJCurrentPhone.h; sourceTree = "<group>"; };
+		74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PJCurrentPhone.m; sourceTree = "<group>"; };
+		74DBBE0C1FFF5B0700C70F88 /* ICNewsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsChannel.m; sourceTree = "<group>"; };
+		74DBBE0D1FFF5B0700C70F88 /* ICNewsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsChannel.h; sourceTree = "<group>"; };
+		74DBBE121FFF941700C70F88 /* PJNewsPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PJNewsPoints.h; sourceTree = "<group>"; };
+		74DBBE131FFF941700C70F88 /* PJNewsPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PJNewsPoints.m; sourceTree = "<group>"; };
 		75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.release.xcconfig"; sourceTree = "<group>"; };
 		7779D058E0C78BD4AC27B464 /* Pods_iCampus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A03774221FE8C9DF0051D41A /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		A03774241FE8C9E90051D41A /* UMAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMAnalytics.framework; sourceTree = "<group>"; };
+		A03774261FE8C9F10051D41A /* UMCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMCommon.framework; sourceTree = "<group>"; };
 		A47E666B3929F0973545A197 /* Pods-iCampus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampus/Pods-iCampus.debug.xcconfig"; sourceTree = "<group>"; };
 		A90F4B021E9690E000DDD6BC /* iCampus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCampus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F4B051E9690E000DDD6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A90F4B071E9690E000DDD6BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A90F4B0A1E9690E000DDD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A90F4B0F1E9690E000DDD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A90F4B111E9690E000DDD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90F4B161E9690E000DDD6BC /* iCampusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCampusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A90F4B1A1E9690E000DDD6BC /* iCampusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCampusTests.swift; sourceTree = "<group>"; };
@@ -232,8 +255,6 @@
 		A90F4B871E96998600DDD6BC /* ICLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLoginManager.m; sourceTree = "<group>"; };
 		A90F4B891E96998600DDD6BC /* ICNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNews.h; sourceTree = "<group>"; };
 		A90F4B8A1E96998600DDD6BC /* ICNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNews.m; sourceTree = "<group>"; };
-		A90F4B8B1E96998600DDD6BC /* ICNewsChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsChannel.h; sourceTree = "<group>"; };
-		A90F4B8C1E96998600DDD6BC /* ICNewsChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsChannel.m; sourceTree = "<group>"; };
 		A90F4B8D1E96998600DDD6BC /* ICNewsDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICNewsDetail.h; sourceTree = "<group>"; };
 		A90F4B8E1E96998600DDD6BC /* ICNewsDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICNewsDetail.m; sourceTree = "<group>"; };
 		A90F4B911E96998600DDD6BC /* ICGateViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICGateViewCell.swift; sourceTree = "<group>"; };
@@ -249,15 +270,39 @@
 		A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICNewsDetailViewController.swift; sourceTree = "<group>"; };
-		A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageViewController.swift; path = YellowPage/ICYellowPageViewController.swift; sourceTree = "<group>"; };
-		A98CB96D1EAB5030007882AA /* ICYellowPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPage.h; path = YellowPage/ICYellowPage.h; sourceTree = "<group>"; };
-		A98CB96E1EAB5030007882AA /* ICYellowPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPage.m; path = YellowPage/ICYellowPage.m; sourceTree = "<group>"; };
-		A98CB9701EAB5279007882AA /* ICYellowPageChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICYellowPageChannel.h; path = YellowPage/ICYellowPageChannel.h; sourceTree = "<group>"; };
-		A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ICYellowPageChannel.m; path = YellowPage/ICYellowPageChannel.m; sourceTree = "<group>"; };
-		A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICYellowPageMainViewController.swift; path = YellowPage/ICYellowPageMainViewController.swift; sourceTree = "<group>"; };
 		A9E3DC8C1E97B45F0042FBAA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A9F0FFE91EFA6C95007168C8 /* CASBistu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CASBistu.h; sourceTree = "<group>"; };
+		A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CASBistu.m; sourceTree = "<group>"; };
+		A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICCASViewController.swift; sourceTree = "<group>"; };
+		A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICCASViewController.xib; sourceTree = "<group>"; };
+		DAA2B2F51F7F5783006946B2 /* YZLostDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsView.h; sourceTree = "<group>"; };
+		DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsView.m; sourceTree = "<group>"; };
+		DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YZLostDetailsViewController.h; sourceTree = "<group>"; };
+		DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YZLostDetailsViewController.m; sourceTree = "<group>"; };
+		DAABAB081F98E60D00E09C3B /* OXExpandingButtonBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OXExpandingButtonBar.h; sourceTree = "<group>"; };
+		DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OXExpandingButtonBar.m; sourceTree = "<group>"; };
 		E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCampusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50CDF631F935A1800264AB4 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		F50CDF641F935A1800264AB4 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		F50CDF661F935A1800264AB4 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		F50CDF671F935A1800264AB4 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		F50CDF691F935A1800264AB4 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		F50CDF6A1F935A1800264AB4 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKPromptResources.bundle; sourceTree = "<group>"; };
+		F50CDF701F935A1800264AB4 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
+		F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		F50CDF731F935A1800264AB4 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
+		F50CDF741F935B1200264AB4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F5C73C901F97487B0090D578 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5C73C931F9763160090D578 /* ZKTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKTabBarViewController.h; sourceTree = "<group>"; };
+		F5C73C941F9763160090D578 /* ZKTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKTabBarViewController.m; sourceTree = "<group>"; };
 		FE8CAAADB22C241BE5F500D0 /* Pods-iCampusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCampusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCampusTests/Pods-iCampusTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,15 +311,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50FB0DB1F93889D00B8CBBE /* CoreTelephony.framework in Frameworks */,
+				F50FB0D91F93889400B8CBBE /* SystemConfiguration.framework in Frameworks */,
+				F50CDF771F935B2C00264AB4 /* CoreGraphics.framework in Frameworks */,
+				F50CDF791F9366F200264AB4 /* UMSocialNetwork.framework in Frameworks */,
+				F50CDF751F935B1200264AB4 /* libsqlite3.tbd in Frameworks */,
+				A03774231FE8C9DF0051D41A /* UTDID.framework in Frameworks */,
 				A90F4BC01E9733BC00DDD6BC /* libstdc++.tbd in Frameworks */,
 				A90F4BBE1E9733B200DDD6BC /* MessageUI.framework in Frameworks */,
+				A03774271FE8C9F10051D41A /* UMCommon.framework in Frameworks */,
+				F50FB0DE1F938D4400B8CBBE /* libSocialSina.a in Frameworks */,
+				F50CDF781F9366ED00264AB4 /* UMSocialCore.framework in Frameworks */,
+				A93CD31A1EFD3AC100DE7C8C /* MOBFoundation.framework in Frameworks */,
 				A90F4BBC1E9733AA00DDD6BC /* libicucore.tbd in Frameworks */,
 				A90F4BBA1E9733A100DDD6BC /* libz.tbd in Frameworks */,
+				F50FB0DD1F938D3D00B8CBBE /* libSocialQQ.a in Frameworks */,
 				A90F4BB91E97338E00DDD6BC /* JavaScriptCore.framework in Frameworks */,
-				A90F4B9E1E96998600DDD6BC /* MOBFoundation.framework in Frameworks */,
 				A9A02BC51E9736AE00BF44E4 /* SMS_SDK.framework in Frameworks */,
+				F50CDF7B1F9366FC00264AB4 /* libUMSocialLog.a in Frameworks */,
 				A90F4B9F1E96998600DDD6BC /* MOBFoundationEx.framework in Frameworks */,
 				DA3C67F9254F50049B15B326 /* Pods_iCampus.framework in Frameworks */,
+				F50FB0DC1F938D2E00B8CBBE /* libSocialWeChat.a in Frameworks */,
+				F50CDF7D1F93670300264AB4 /* UShareUI.framework in Frameworks */,
+				A03774251FE8C9E90051D41A /* UMAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA446601EB7463800A0FCAF /* 添加新失物 */,
+				DAA2B2F91F7F7B63006946B2 /* 失误详情 */,
 				2CA4464F1EB7403800A0FCAF /* PJLostViewController.h */,
 				2CA446501EB7403800A0FCAF /* PJLostViewController.m */,
 			);
@@ -359,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA446571EB740E300A0FCAF /* cell */,
+				DAA2B2F81F7F578B006946B2 /* 失误详情 */,
 				2CA446541EB740DE00A0FCAF /* PJLostTableView.h */,
 				2CA446551EB740DE00A0FCAF /* PJLostTableView.m */,
 			);
@@ -393,16 +454,6 @@
 				2CA4467A1EB871C400A0FCAF /* PJKeyBoard.m */,
 			);
 			name = PJKeyBoard;
-			sourceTree = "<group>";
-		};
-		2CA446821EB8A47D00A0FCAF /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				2CA4467D1EB8A45E00A0FCAF /* logoutFoot.h */,
-				2CA4467E1EB8A45E00A0FCAF /* logoutFoot.m */,
-				2CA4467F1EB8A45E00A0FCAF /* settingXIB.xib */,
-			);
-			name = Setting;
 			sourceTree = "<group>";
 		};
 		2CA446831EB8A48900A0FCAF /* imgScrollView */ = {
@@ -455,10 +506,8 @@
 		2CA446961EB96E4C00A0FCAF /* 账户与安全 */ = {
 			isa = PBXGroup;
 			children = (
+				7405EF471EFACDBF0086B0EA /* 重置密码 */,
 				2CA446A91EBA1C7700A0FCAF /* 修改密码 */,
-				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
-				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
-				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
 			);
 			name = "账户与安全";
 			sourceTree = "<group>";
@@ -515,6 +564,7 @@
 		2CF5CBC31EB45AA4006580D7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				7486338B1FFCA2270091A10E /* PJTapic */,
 				2CA4468E1EB8DDB000A0FCAF /* PJUser */,
 				2CA4467C1EB871C800A0FCAF /* PJKeyBoard */,
 				2CF5CBDE1EB479F2006580D7 /* PJHUD */,
@@ -630,7 +680,6 @@
 		2CF5CBFE1EB4C61D006580D7 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				2CF5CC0F1EB58998006580D7 /* 关于详情 */,
 				2CF5CC061EB4C825006580D7 /* cell */,
 				2CF5CC031EB4C76F006580D7 /* PJAboutTableView.h */,
 				2CF5CC041EB4C76F006580D7 /* PJAboutTableView.m */,
@@ -658,13 +707,6 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
-		2CF5CC0F1EB58998006580D7 /* 关于详情 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "关于详情";
-			sourceTree = "<group>";
-		};
 		2CF5CC101EB589D7006580D7 /* 关于详情 */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +729,11 @@
 		4EF51A884EEA4791DBEECA20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F50FB0DA1F93889D00B8CBBE /* CoreTelephony.framework */,
+				F50FB0D81F93889400B8CBBE /* SystemConfiguration.framework */,
+				F50CDF761F935B2C00264AB4 /* CoreGraphics.framework */,
+				F50CDF741F935B1200264AB4 /* libsqlite3.tbd */,
+				A93CD3181EFD3A6000DE7C8C /* MobileCoreServices.framework */,
 				A90F4BBF1E9733BC00DDD6BC /* libstdc++.tbd */,
 				A90F4BBD1E9733B200DDD6BC /* MessageUI.framework */,
 				A90F4BBB1E9733AA00DDD6BC /* libicucore.tbd */,
@@ -696,6 +743,35 @@
 				E8D570FD339AEFF7F69B204A /* Pods_iCampusTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7405EF471EFACDBF0086B0EA /* 重置密码 */ = {
+			isa = PBXGroup;
+			children = (
+				2CA446A41EBA0DDB00A0FCAF /* PJUserAandCViewController.h */,
+				2CA446A51EBA0DDB00A0FCAF /* PJUserAandCViewController.m */,
+				2CA446A71EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard */,
+			);
+			name = "重置密码";
+			sourceTree = "<group>";
+		};
+		7486338B1FFCA2270091A10E /* PJTapic */ = {
+			isa = PBXGroup;
+			children = (
+				7486338C1FFCA2370091A10E /* PJTapic.h */,
+				7486338D1FFCA2370091A10E /* PJTapic.m */,
+			);
+			name = PJTapic;
+			sourceTree = "<group>";
+		};
+		A03774211FE8C9B70051D41A /* U-App */ = {
+			isa = PBXGroup;
+			children = (
+				A03774261FE8C9F10051D41A /* UMCommon.framework */,
+				A03774241FE8C9E90051D41A /* UMAnalytics.framework */,
+				A03774221FE8C9DF0051D41A /* UTDID.framework */,
+			);
+			path = "U-App";
 			sourceTree = "<group>";
 		};
 		A90F4AF91E9690E000DDD6BC = {
@@ -725,10 +801,8 @@
 			children = (
 				A90F4B711E96983100DDD6BC /* LICENSE */,
 				A90F4B051E9690E000DDD6BC /* AppDelegate.swift */,
-				A90F4B071E9690E000DDD6BC /* ViewController.swift */,
 				A90F4B091E9690E000DDD6BC /* Main.storyboard */,
-				A90F4B0C1E9690E000DDD6BC /* Assets.xcassets */,
-				A90F4B0E1E9690E000DDD6BC /* LaunchScreen.storyboard */,
+				F5C73C901F97487B0090D578 /* Assets.xcassets */,
 				A90F4B111E9690E000DDD6BC /* Info.plist */,
 				A90F4B821E96998600DDD6BC /* Model */,
 				A90F4B8F1E96998600DDD6BC /* View */,
@@ -761,9 +835,9 @@
 		A90F4B731E96998600DDD6BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F5C73C921F9762DC0090D578 /* Tabbar */,
 				A90F4B791E96998600DDD6BC /* MSRAnimationInfo.swift */,
 				2CA446901EB8E87300A0FCAF /* User */,
-				2CA446821EB8A47D00A0FCAF /* Setting */,
 				2CA446521EB7403F00A0FCAF /* Lost */,
 				2CA4464B1EB6F85500A0FCAF /* Map */,
 				2CF5CBFF1EB4C62A006580D7 /* About */,
@@ -787,6 +861,8 @@
 		A90F4B761E96998600DDD6BC /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A9F0FFEC1EFAC71D007168C8 /* ICCASViewController.swift */,
+				A9F0FFED1EFAC71D007168C8 /* ICCASViewController.xib */,
 				A90F4B771E96998600DDD6BC /* ICLoginViewController.swift */,
 				A90F4B781E96998600DDD6BC /* ICLoginViewController.xib */,
 			);
@@ -796,9 +872,13 @@
 		A90F4B7A1E96998600DDD6BC /* News */ = {
 			isa = PBXGroup;
 			children = (
+				74DBBE121FFF941700C70F88 /* PJNewsPoints.h */,
+				74DBBE131FFF941700C70F88 /* PJNewsPoints.m */,
 				A90F4B7B1E96998600DDD6BC /* ICNewsMainViewController.swift */,
 				A90F4B7C1E96998600DDD6BC /* ICNewsTableViewController.swift */,
 				A96FE6AE1E9C816F00A6D035 /* ICNewsDetailViewController.swift */,
+				74DBBE081FFF1DED00C70F88 /* PJCurrentPhone.h */,
+				74DBBE091FFF1DED00C70F88 /* PJCurrentPhone.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -806,6 +886,9 @@
 		A90F4B7D1E96998600DDD6BC /* External */ = {
 			isa = PBXGroup;
 			children = (
+				A03774211FE8C9B70051D41A /* U-App */,
+				DAABAB071F98E50900E09C3B /* OXExpandingButtonBar */,
+				F50CDF601F935A1800264AB4 /* UMSocial */,
 				2CA446841EB8B84900A0FCAF /* Extension */,
 				A90F4B7E1E96998600DDD6BC /* SMS_SDK */,
 			);
@@ -825,7 +908,6 @@
 		A90F4B821E96998600DDD6BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A98CB96C1EAB4FCC007882AA /* YellowPage */,
 				A90F4B831E96998600DDD6BC /* ICNetworkManager.h */,
 				A90F4B841E96998600DDD6BC /* ICNetworkManager.m */,
 				A90F4B851E96998600DDD6BC /* Login */,
@@ -839,6 +921,8 @@
 			children = (
 				A90F4B861E96998600DDD6BC /* ICLoginManager.h */,
 				A90F4B871E96998600DDD6BC /* ICLoginManager.m */,
+				A9F0FFE91EFA6C95007168C8 /* CASBistu.h */,
+				A9F0FFEA1EFA6C95007168C8 /* CASBistu.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -848,8 +932,8 @@
 			children = (
 				A90F4B891E96998600DDD6BC /* ICNews.h */,
 				A90F4B8A1E96998600DDD6BC /* ICNews.m */,
-				A90F4B8B1E96998600DDD6BC /* ICNewsChannel.h */,
-				A90F4B8C1E96998600DDD6BC /* ICNewsChannel.m */,
+				74DBBE0D1FFF5B0700C70F88 /* ICNewsChannel.h */,
+				74DBBE0C1FFF5B0700C70F88 /* ICNewsChannel.m */,
 				A90F4B8D1E96998600DDD6BC /* ICNewsDetail.h */,
 				A90F4B8E1E96998600DDD6BC /* ICNewsDetail.m */,
 			);
@@ -905,8 +989,6 @@
 		A98CB9691EAAFC73007882AA /* YellowPage */ = {
 			isa = PBXGroup;
 			children = (
-				A98CB96A1EAAFCA5007882AA /* ICYellowPageViewController.swift */,
-				A98CB9731EAC38C3007882AA /* ICYellowPageMainViewController.swift */,
 				2CF5CBCE1EB46B85006580D7 /* 页内 */,
 				2C8B9FDF1EB455E60062E918 /* PJYellowPageViewController.h */,
 				2C8B9FE01EB455E60062E918 /* PJYellowPageViewController.m */,
@@ -914,15 +996,115 @@
 			name = YellowPage;
 			sourceTree = "<group>";
 		};
-		A98CB96C1EAB4FCC007882AA /* YellowPage */ = {
+		DAA2B2F81F7F578B006946B2 /* 失误详情 */ = {
 			isa = PBXGroup;
 			children = (
-				A98CB96D1EAB5030007882AA /* ICYellowPage.h */,
-				A98CB96E1EAB5030007882AA /* ICYellowPage.m */,
-				A98CB9701EAB5279007882AA /* ICYellowPageChannel.h */,
-				A98CB9711EAB5279007882AA /* ICYellowPageChannel.m */,
+				DAA2B2F51F7F5783006946B2 /* YZLostDetailsView.h */,
+				DAA2B2F61F7F5783006946B2 /* YZLostDetailsView.m */,
 			);
-			name = YellowPage;
+			path = "失误详情";
+			sourceTree = "<group>";
+		};
+		DAA2B2F91F7F7B63006946B2 /* 失误详情 */ = {
+			isa = PBXGroup;
+			children = (
+				DAA2B2FA1F7F7B9A006946B2 /* YZLostDetailsViewController.h */,
+				DAA2B2FB1F7F7B9A006946B2 /* YZLostDetailsViewController.m */,
+			);
+			name = "失误详情";
+			sourceTree = "<group>";
+		};
+		DAABAB071F98E50900E09C3B /* OXExpandingButtonBar */ = {
+			isa = PBXGroup;
+			children = (
+				DAABAB081F98E60D00E09C3B /* OXExpandingButtonBar.h */,
+				DAABAB091F98E61800E09C3B /* OXExpandingButtonBar.m */,
+			);
+			path = OXExpandingButtonBar;
+			sourceTree = "<group>";
+		};
+		F50CDF601F935A1800264AB4 /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF611F935A1800264AB4 /* SocialLibraries */,
+				F50CDF6B1F935A1800264AB4 /* UMSocialSDK */,
+				F50CDF6F1F935A1800264AB4 /* UMSocialSDKPlugin */,
+				F50CDF711F935A1800264AB4 /* UMSocialUI */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		F50CDF611F935A1800264AB4 /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF621F935A1800264AB4 /* QQ */,
+				F50CDF651F935A1800264AB4 /* Sina */,
+				F50CDF681F935A1800264AB4 /* WeChat */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		F50CDF621F935A1800264AB4 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF631F935A1800264AB4 /* libSocialQQ.a */,
+				F50CDF641F935A1800264AB4 /* UMSocialQQHandler.h */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		F50CDF651F935A1800264AB4 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF661F935A1800264AB4 /* libSocialSina.a */,
+				F50CDF671F935A1800264AB4 /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		F50CDF681F935A1800264AB4 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF691F935A1800264AB4 /* libSocialWeChat.a */,
+				F50CDF6A1F935A1800264AB4 /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		F50CDF6B1F935A1800264AB4 /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF6C1F935A1800264AB4 /* UMSocialCore.framework */,
+				F50CDF6D1F935A1800264AB4 /* UMSocialNetwork.framework */,
+				F50CDF6E1F935A1800264AB4 /* UMSocialSDKPromptResources.bundle */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		F50CDF6F1F935A1800264AB4 /* UMSocialSDKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF701F935A1800264AB4 /* libUMSocialLog.a */,
+			);
+			path = UMSocialSDKPlugin;
+			sourceTree = "<group>";
+		};
+		F50CDF711F935A1800264AB4 /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				F50CDF721F935A1800264AB4 /* UMSocialSDKResources.bundle */,
+				F50CDF731F935A1800264AB4 /* UShareUI.framework */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		F5C73C921F9762DC0090D578 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F5C73C931F9763160090D578 /* ZKTabBarViewController.h */,
+				F5C73C941F9763160090D578 /* ZKTabBarViewController.m */,
+			);
+			name = Tabbar;
 			sourceTree = "<group>";
 		};
 		FEB058C7D5A8B1767C7C9FAD /* Pods */ = {
@@ -949,6 +1131,7 @@
 				A90F4B001E9690E000DDD6BC /* Resources */,
 				58FCA5A4F929A2CE92DC05D2 /* [CP] Embed Pods Frameworks */,
 				B758AA524F0A86AFA0BB3BFF /* [CP] Copy Pods Resources */,
+				DA1349381FCC1E5600502154 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1005,7 +1188,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = ifLab;
 				TargetAttributes = {
 					A90F4B011E9690E000DDD6BC = {
@@ -1059,11 +1242,11 @@
 				2C8B9FF31EB456A00062E918 /* PJYellowPageTableViewCell.xib in Resources */,
 				A9E3DC8D1E97B45F0042FBAA /* Podfile in Resources */,
 				2CA446BF1EBABFF500A0FCAF /* PJMyPublishLostTableViewCell.xib in Resources */,
-				A90F4B101E9690E000DDD6BC /* LaunchScreen.storyboard in Resources */,
+				F50CDF7A1F9366F700264AB4 /* UMSocialSDKPromptResources.bundle in Resources */,
+				F50CDF7C1F93670100264AB4 /* UMSocialSDKResources.bundle in Resources */,
 				A90F4B9A1E96998600DDD6BC /* ICLoginViewController.xib in Resources */,
-				A90F4B0D1E9690E000DDD6BC /* Assets.xcassets in Resources */,
-				2CA446811EB8A45E00A0FCAF /* settingXIB.xib in Resources */,
 				2CA4465F1EB7411400A0FCAF /* PJLostTableViewCell.xib in Resources */,
+				A9F0FFEF1EFAC71D007168C8 /* ICCASViewController.xib in Resources */,
 				2CF5CBCB1EB469C2006580D7 /* PJYellowPageDetailsTableViewCell.xib in Resources */,
 				2CF5CC0E1EB4C850006580D7 /* PJAboutTableViewCell.xib in Resources */,
 				2CA446A81EBA1AAA00A0FCAF /* PJUserAandCSB.storyboard in Resources */,
@@ -1074,6 +1257,7 @@
 				2CA4469F1EB9BFE500A0FCAF /* PJUserSB.storyboard in Resources */,
 				A90F4BAB1E96998600DDD6BC /* ICSimpleImageViewCell.xib in Resources */,
 				A90F4B0B1E9690E000DDD6BC /* Main.storyboard in Resources */,
+				F5C73C911F9748860090D578 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1100,13 +1284,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iCampusTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58FCA5A4F929A2CE92DC05D2 /* [CP] Embed Pods Frameworks */ = {
@@ -1115,9 +1302,40 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iCampus/Pods-iCampus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CAS-iOS/CAS_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/DTCoreText/DTCoreText.framework",
+				"${BUILT_PRODUCTS_DIR}/DTFoundation/DTFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IDMPhotoBrowser/IDMPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/JXBAdPageView/JXBAdPageView.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+				"${BUILT_PRODUCTS_DIR}/serverURL/serverURL.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CAS_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTCoreText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IDMPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXBAdPageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/serverURL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1175,14 +1393,31 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iCampus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1349381FCC1E5600502154 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"a378c96118\"\n# #\nBUGLY_APP_KEY=\"9c1f58b6-0743-4e86-9608-7ba272f3a53c\"\n# #\nBUNDLE_IDENTIFIER=\"edu.bistu.ibistu-gap\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\n# UPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\n# UPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n    \n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n        P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n            P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n            \n            DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            echo \"-----------------------------\"\n            STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n            echo \"-----------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n        }\n        \n        # .dSYM解析为bSYMBOL文件\n        function dSYMParse() {\n            DSYM_FILE=\"$1\"\n            DSYM_SYMBOL_FILE=\"$2\"\n            \n            echo \"--------------------------------\"\n            echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n            (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n            echo \"--------------------------------\"\n            \n        }\n        \n        # 执行\n        function run() {\n            \n            CONFIG_BUGLY_APP_ID=\"$1\"\n            CONFIG_BUGLY_APP_KEY=\"$2\"\n            \n            CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n            CONFIG_BUGLY_APP_VERSION=\"$4\"\n            CONFIG_DSYM_SOURCE_DIR=\"$5\"\n            CONFIG_DSYM_DEST_DIR=\"$6\"\n            CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n            \n            # 检查必须参数是否设置\n            if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n            exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n            fi\n            \n            if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n            exitWithMessage \"Error: Bugly App ID not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n            exitWithMessage \"Error: Bugly App Key not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n            exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n            exitWithMessage \"Error: App Version not defined.\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n            fi\n            \n            if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            mkdir ${CONFIG_DSYM_DEST_DIR}\n            fi\n            \n            DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n            IFS=$'\\n'\n            \n            echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n            RET=\"F\"\n            \n            #\n            for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n            RET=\"T\"\n            echo \"Found dSYM file: $dsymFile\"\n            \n            DSYM_FILE_NAME=${dsymFile##*/}\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n                DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n                \n                if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n                if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n                fi\n                # 如果只上传dSYM，直接压缩dSYM目录\n                zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n                else\n                # 使用符号表工具来生成Symbol文件\n                dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n                fi\n                \n                # 上传\n                dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n                done\n                \n                if [ $RET = \"F\" ]; then\n                exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n                fi\n            }\n            \n            # 在Xcode工程中执行\n            function runInXcode(){\n                echo \"Uploading dSYM to Bugly in Xcode ...\"\n                \n                echo \"Info.Plist : ${INFOPLIST_FILE}\"\n                \n                BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n                BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n                \n                # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n                if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n                BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n                else\n                BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n                fi\n                \n                echo \"--------------------------------\"\n                echo \"Prepare application information.\"\n                echo \"--------------------------------\"\n                \n                echo \"Product Name: ${PRODUCT_NAME}\"\n                echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n                echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n                echo \"Build: ${BUNDLE_VERSION}\"\n                \n                echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n                echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n                echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n                \n                echo \"--------------------------------\"\n                echo \"Check the arguments ...\"\n                \n                ##检查模拟器编译是否允许上传符号\n                if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n                if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否是Release模式编译\n                if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n                if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否Archive操作\n                if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n                if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n                echo \"Archive the package\"\n                else\n                exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n                fi\n                fi\n                \n                #\n                run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n            }\n            \n            # 根据Xcode的环境变量判断是否处于Xcode环境\n            INFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n            \n            BuildInXcode=\"F\"\n            if [ -f \"${INFO_PLIST_FILE}\" ]; then\n            BuildInXcode=\"T\"\n            fi\n            \n            if [ $BuildInXcode = \"T\" ]; then\n            runInXcode\n            else\n            echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n            # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n            BUGLY_APP_ID=\"$1\"\n            BUGLY_APP_KEY=\"$2\"\n            BUNDLE_IDENTIFIER=\"$3\"\n            BUGLY_APP_VERSION=\"$4\"\n            DWARF_DSYM_FOLDER_PATH=\"$5\"\n            SYMBOL_OUTPUT_PATH=\"$6\"\n            UPLOAD_DSYM_ONLY=$7\n            run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\n            fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1200,17 +1435,14 @@
 				2CF5CC0D1EB4C850006580D7 /* PJAboutTableViewCell.m in Sources */,
 				2CF5CBF81EB4895F006580D7 /* PJBusDetailsTableViewCell.m in Sources */,
 				2CF5CBD11EB46BA3006580D7 /* PJYellowPageDetailsViewController.m in Sources */,
-				A98CB9721EAB5279007882AA /* ICYellowPageChannel.m in Sources */,
 				2CA4464E1EB6F87500A0FCAF /* PJMapViewController.m in Sources */,
-				A90F4B081E9690E000DDD6BC /* ViewController.swift in Sources */,
 				A90F4B9D1E96998600DDD6BC /* ICNewsTableViewController.swift in Sources */,
 				2CA4467B1EB871C400A0FCAF /* PJKeyBoard.m in Sources */,
 				2CF5CC131EB589F4006580D7 /* PJAboutDetailsViewController.m in Sources */,
 				A90F4BA61E96998600DDD6BC /* ICGateViewCell.swift in Sources */,
-				A98CB96F1EAB5030007882AA /* ICYellowPage.m in Sources */,
-				A98CB96B1EAAFCA5007882AA /* ICYellowPageViewController.swift in Sources */,
 				2CA446511EB7403800A0FCAF /* PJLostViewController.m in Sources */,
 				A90F4BAA1E96998600DDD6BC /* ICSimpleImageViewCell.swift in Sources */,
+				A9F0FFEE1EFAC71D007168C8 /* ICCASViewController.swift in Sources */,
 				A90F4BA81E96998600DDD6BC /* ICNoneImageViewCell.swift in Sources */,
 				2CA446781EB864A500A0FCAF /* PJZoomImageScrollView.m in Sources */,
 				A90F4B991E96998600DDD6BC /* ICLoginViewController.swift in Sources */,
@@ -1218,24 +1450,31 @@
 				A90F4B9C1E96998600DDD6BC /* ICNewsMainViewController.swift in Sources */,
 				A90F4BA51E96998600DDD6BC /* ICNewsDetail.m in Sources */,
 				A90F4BA21E96998600DDD6BC /* ICLoginManager.m in Sources */,
+				A9F0FFEB1EFA6C95007168C8 /* CASBistu.m in Sources */,
 				2C8B9FE11EB455E60062E918 /* PJYellowPageViewController.m in Sources */,
+				DAA2B2FC1F7F7B9A006946B2 /* YZLostDetailsViewController.m in Sources */,
 				2CF5CBE71EB47BDD006580D7 /* PJBusTableView.m in Sources */,
 				A90F4B981E96998600DDD6BC /* ICGateViewController.swift in Sources */,
 				A90F4B9B1E96998600DDD6BC /* MSRAnimationInfo.swift in Sources */,
 				2CA446A31EB9CD3C00A0FCAF /* PJMyLostViewController.m in Sources */,
+				DAA2B2F71F7F5783006946B2 /* YZLostDetailsView.m in Sources */,
 				A96FE6AF1E9C816F00A6D035 /* ICNewsDetailViewController.swift in Sources */,
 				2CF5CBDA1EB46C93006580D7 /* PJYellowPageDetailsTableView.m in Sources */,
-				A98CB9741EAC38C3007882AA /* ICYellowPageMainViewController.swift in Sources */,
 				2CA4464A1EB6F80400A0FCAF /* PJMapView.m in Sources */,
+				74DBBE141FFF941700C70F88 /* PJNewsPoints.m in Sources */,
 				2CF5CBE31EB47B2D006580D7 /* PJBusViewController.m in Sources */,
+				74DBBE0E1FFF5B0700C70F88 /* ICNewsChannel.m in Sources */,
 				2C8B9FE71EB456180062E918 /* PJYellowPageTableView.m in Sources */,
 				2CA446931EB8E88C00A0FCAF /* PJUserViewController.m in Sources */,
 				2CA4468D1EB8DDA900A0FCAF /* PJUser.m in Sources */,
 				2CF5CBDD1EB478EF006580D7 /* PJHUD.m in Sources */,
+				74DBBE0A1FFF1DED00C70F88 /* PJCurrentPhone.m in Sources */,
 				A90F4BA11E96998600DDD6BC /* ICNetworkManager.m in Sources */,
-				A90F4BA41E96998600DDD6BC /* ICNewsChannel.m in Sources */,
+				F5C73C951F9763160090D578 /* ZKTabBarViewController.m in Sources */,
+				7486338E1FFCA2370091A10E /* PJTapic.m in Sources */,
 				2CA446A61EBA0DDB00A0FCAF /* PJUserAandCViewController.m in Sources */,
 				2CA446561EB740DE00A0FCAF /* PJLostTableView.m in Sources */,
+				DAABAB0A1F98E61800E09C3B /* OXExpandingButtonBar.m in Sources */,
 				2CA4468A1EB8B91900A0FCAF /* PJUIImage+Extension.m in Sources */,
 				2CF5CBC01EB45A79006580D7 /* constant.mm in Sources */,
 				A90F4B061E9690E000DDD6BC /* AppDelegate.swift in Sources */,
@@ -1245,7 +1484,6 @@
 				2CF5CBFD1EB48D96006580D7 /* PJBusDetailsViewController.m in Sources */,
 				2CF5CBF31EB48936006580D7 /* PJBusDetailsTableView.m in Sources */,
 				2CA446AF1EBA2BEA00A0FCAF /* PJUserUpdatePWViewController.m in Sources */,
-				2CA446801EB8A45E00A0FCAF /* logoutFoot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1289,14 +1527,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A90F4B0E1E9690E000DDD6BC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A90F4B0F1E9690E000DDD6BC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1309,7 +1539,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1317,7 +1549,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1360,7 +1596,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1368,7 +1606,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1400,18 +1642,70 @@
 			baseConfigurationReference = A47E666B3929F0973545A197 /* Pods-iCampus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iCampus/External/SMS_SDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/iCampus/External/U-App",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					UM_Swift,
+					"DEBUG=1",
+					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = iCampus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.iCampus;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/Sina",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CAS_iOS\"",
+					"-framework",
+					"\"DACircularProgress\"",
+					"-framework",
+					"\"DTCoreText\"",
+					"-framework",
+					"\"DTFoundation\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IDMPhotoBrowser\"",
+					"-framework",
+					"\"JXBAdPageView\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TTGTagCollectionView\"",
+					"-framework",
+					"\"pop\"",
+					"-framework",
+					"\"serverURL\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1420,18 +1714,69 @@
 			baseConfigurationReference = 75334D51AE03F36D86BFAB9D /* Pods-iCampus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ICAppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = ZRU9NS7944;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iCampus/External/SMS_SDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/iCampus/External/U-App",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					UM_Swift,
 				);
 				INFOPLIST_FILE = iCampus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.iflab.iCampus;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/WeChat",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/iCampus/External/UMSocial/SocialLibraries/Sina",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CAS_iOS\"",
+					"-framework",
+					"\"DACircularProgress\"",
+					"-framework",
+					"\"DTCoreText\"",
+					"-framework",
+					"\"DTFoundation\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IDMPhotoBrowser\"",
+					"-framework",
+					"\"JXBAdPageView\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TTGTagCollectionView\"",
+					"-framework",
+					"\"pop\"",
+					"-framework",
+					"\"serverURL\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bistu.ibistu-gap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iCampus/iCampus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

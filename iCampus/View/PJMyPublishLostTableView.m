@@ -8,7 +8,6 @@
 
 #import "PJMyPublishLostTableView.h"
 
-
 @implementation PJMyPublishLostTableView
 
 - (id)init {
@@ -19,7 +18,7 @@
 
 - (void)initView {
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    self.backgroundColor = RGB(232, 234, 236);
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.delegate = self;
     self.dataSource = self;
     [self registerNib:[UINib nibWithNibName:@"PJMyPublishLostTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJMyPublishLostTableViewCell"];
@@ -44,24 +43,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PJMyPublishLostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PJMyPublishLostTableViewCell" forIndexPath:indexPath];
     cell.dataSource = _tableDataArr[indexPath.row];
+    cell.indexPath = indexPath;
     cell.cellDelegate = self;
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [_tableDelegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [_tableDelegate PJMyPublishLostTableView:tableView editActionsForRowAtIndexPath:indexPath];
 }
 
 - (void)cellClick:(NSArray *)data index:(NSInteger)index {
     [_tableDelegate tableViewClick:data index:index];
+}
+
+- (void)trashClick:(NSIndexPath*)indexPath{
+    [_tableDelegate trashClick:indexPath];
 }
 
 @end

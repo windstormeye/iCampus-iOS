@@ -18,7 +18,7 @@
 }
 
 - (void)initView{
-    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH);
+    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.delegate = self;
     self.dataSource = self;
     [self registerNib:[UINib nibWithNibName:@"PJYellowPageDetailsTableViewCell" bundle:nil] forCellReuseIdentifier:@"PJYellowPageDetailsTableViewCell"];
@@ -45,7 +45,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataArr[indexPath.row][@"telephone"]]]];
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    NSDictionary *dic = @{
+                          @"username" : [PJUser currentUser].first_name,
+                          @"departmentname" : [NSString stringWithFormat:@"%@%@", self.departmentName, _dataArr[indexPath.row][@"name"]],
+                          @"uploadtime" : dateString
+                          };
+    [MobClick event:@"ibistu_yellowpages_details" attributes:dic];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", _dataArr[indexPath.row][@"telephone"]]] options:@{} completionHandler:^(BOOL success) {
+        
+    }];
     PJYellowPageDetailsTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
 }

@@ -10,10 +10,8 @@
 #import "ICNetworkManager.h"
 #import "IDMPhoto.h"
 
-
-@implementation PJMyPublishLostTableViewCell
-{
-    NSArray *_kDataArr;   // 存储最终转化好的ImgURL
+@implementation PJMyPublishLostTableViewCell {
+    NSArray *_kDataArr;   // 存储最终转化好的ImgURLz
 }
 
 - (void)awakeFromNib {
@@ -22,7 +20,12 @@
 }
 
 - (void)initView {
-    
+}
+
+- (void)setFrame:(CGRect)frame{
+    frame.origin.y += 10;
+    frame.size.height -= 10;
+    [super setFrame:frame];
 }
 
 - (void)setDataSource:(NSDictionary *)dataSource {
@@ -81,10 +84,6 @@
     }
     NSArray *photos = [IDMPhoto photosWithURLs:newArr];
     [_cellDelegate cellClick:photos index:tag];
-}
-
-- (void)overBtnClick {
-    
 }
 
 @end

@@ -19,6 +19,7 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         c.attributedTextContextView.shouldDrawLinks = true
         return c
     }()
+    
     var news: ICNews
     var newsDetail: ICNewsDetail?
     
@@ -31,15 +32,22 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        PJHUD.dismiss()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true);
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         tableView.allowsSelection = false
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .none
-//        tableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(refresh))
-//        tableView.mj_header.beginRefreshing()
+        
+        //Umeng share button
+        let shareBtn = UIBarButtonItem(image: UIImage.init(named: "newsShare"), style: .done, target: self, action: #selector(shareAction))
+        self.navigationItem.rightBarButtonItem = shareBtn
         refresh()
     }
     
@@ -58,15 +66,18 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
                                             DTDefaultLineHeightMultiplier: 1.5,
                                             DTDefaultLinkDecoration: false] as [String : Any]
                                         self_.textCell.setHTMLString(detail?.body!, options: options)
-//                                        self_.tableView.mj_header.endRefreshing()
                                         self_.tableView.reloadData()
                                         self_.title = detail?.title
                                         SVProgressHUD.dismiss()
+                                        
+                                        PJNewsPoints.setNewsPoint({[
+                                            "username" : PJUser.defaultManager().first_name,
+                                            "newstitle" : detail?.title
+                                            ]}())
                                     }
-            },
-                                failure: {
-                                    [weak self] _ in
-                                    self?.tableView.separatorStyle = .singleLine
+            }, failure: {
+                [weak self] _ in
+                self?.tableView.separatorStyle = .singleLine
         })
     }
 
@@ -120,25 +131,87 @@ class ICNewsDetailViewController: UITableViewController, DTAttributedTextContent
         tableView.reloadData()
     }
     
-    //MARK: ScrollView Delegate
-    //MARK: HideNavigationBar
-//    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset.y
-//        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView).y
-//        let threshold: CGFloat = 200
-//        UIView.animate(withDuration: 0.5) {
-//            [weak self] in
-//            if let self_ = self {
-//                if offset > 0 && velocity < 0 {
-//                    self_.navigationItem.setHidesBackButton(true, animated: false)
-//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 0)
-//                }
-//                if velocity >= threshold {
-//                    self_.navigationItem.setHidesBackButton(false, animated: false)
-//                    self_.navigationController?.navigationBar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44)
-//                }
-//            }
-//        }
-//    }
+    func createShareView() -> UIScrollView {
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+
+        let scrollView:UIScrollView = UIScrollView.init(frame: CGRect(x:0, y:0, width:screenWidth, height:screenHeight))
+        scrollView.backgroundColor = UIColor.white
+        
+        let titleLabel = UILabel.init(frame: CGRect(x:0, y:10, width:screenWidth, height:50))
+        scrollView.addSubview(titleLabel)
+        titleLabel.text = "iBistu 新闻"
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        
+        let titleImageView = UIImageView.init(frame: CGRect(x:titleLabel.frame.width / 2 - 50 - 45, y:titleLabel.frame.origin.y + 5, width:40, height:40))
+        titleImageView.image = UIImage.init(named: "logo-png")
+        scrollView.addSubview(titleImageView)
+        
+        let tableViewImageView = imageFromView(scrollView: tableView)
+        tableViewImageView.frame = CGRect(x:0, y:titleLabel.frame.height + 10, width:tableViewImageView.frame.width, height:tableViewImageView.frame.height)
+        scrollView.addSubview(tableViewImageView)
+        
+        let QRCodeImageView = UIImageView.init(frame: CGRect(x:(screenWidth - 100)/2, y: tableViewImageView.frame.height + 80, width:100, height:100))
+        QRCodeImageView.image = UIImage.init(named: "QRcode")
+        scrollView.addSubview(QRCodeImageView)
+        
+        scrollView.contentSize = CGSize(width: tableViewImageView.frame.width, height:tableViewImageView.frame.height + 170 + titleImageView.frame.height + 20)
+        
+        let tipsLabel = UILabel.init()
+        tipsLabel.text = "下载iBistu，看更多校内新闻！"
+        tipsLabel.textColor = UIColor.black;
+        tipsLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        tipsLabel.sizeToFit()
+        tipsLabel.frame = CGRect(x:(scrollView.frame.width - tipsLabel.frame.width)/2, y:scrollView.contentSize.height - 30, width:tipsLabel.frame.width, height:15)
+        scrollView.addSubview(tipsLabel)
+        
+        return scrollView;
+    }
+    
+    func imageFromView(scrollView:UIScrollView) -> UIImageView {
+        var image:UIImage? = nil;
+        UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, true, UIScreen.main.scale);
+        let savedContentOffset = scrollView.contentOffset;
+        let savedFrame = scrollView.frame;
+        scrollView.contentOffset = CGPoint.zero;
+        scrollView.frame = CGRect(x:0, y:0, width:scrollView.contentSize.width, height:scrollView.contentSize.height);
+        scrollView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        scrollView.contentOffset = savedContentOffset;
+        scrollView.frame = savedFrame;
+        UIGraphicsEndImageContext();
+        
+        let imageView:UIImageView = UIImageView.init(frame: CGRect(x:0, y:0, width:scrollView.contentSize.width, height:scrollView.contentSize.height));
+        imageView.image = image;
+        
+        return imageView;
+    }
+    
+    
+    //弹出分享面板
+    func shareAction() {
+        UMSocialUIManager.setPreDefinePlatforms([0,1,2,3,4,5])
+        UMSocialUIManager.showShareMenuViewInWindow { (platformType:UMSocialPlatformType, userinfo:Any?) -> Void in
+
+            PJNewsPoints.setNewsShare()
+            
+            let messageObject:UMSocialMessageObject = UMSocialMessageObject.init()
+            messageObject.title = self.news.title
+            //分享图片
+            let shareObject:UMShareImageObject = UMShareImageObject.init()
+            shareObject.shareImage = self.imageFromView(scrollView: self.createShareView()).image
+            messageObject.shareObject = shareObject
+
+            UMSocialManager.default().share(to: platformType, messageObject: messageObject, currentViewController: self, completion: { (shareResponse, error) -> Void in
+                if error != nil {
+                    print("Share Fail with error ：%@", error as Any)
+                }else{
+                    print("Share succeed")
+                }
+            })
+        }
+    }
    
 }

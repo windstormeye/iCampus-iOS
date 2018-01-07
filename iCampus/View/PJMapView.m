@@ -9,8 +9,7 @@
 #import "PJMapView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@implementation PJMapView
-{
+@implementation PJMapView {
     MKMapView *_mapView;
     NSMutableArray *annotations;
 }
@@ -18,6 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     _mapView = [[MKMapView alloc] initWithFrame:frame];
+    _mapView.delegate = self;
     [self addSubview:_mapView];
     
     [self initView];
@@ -27,7 +27,9 @@
 - (void)initView {
     _dataArr = [@[] mutableCopy];
     _mapView.mapType = MKMapTypeStandard;
+    _mapView.showsUserLocation = true;
     annotations = [@[] mutableCopy];
+    
 }
 
 - (void)setDataArr:(NSMutableArray *)dataArr {
@@ -44,16 +46,21 @@
         CGFloat longitude = [dict[@"longitude"] floatValue];
         CLLocationCoordinate2D coordinate = {latitude,longitude};
         annotation.coordinate = coordinate;
-        
+
         [_mapView addAnnotation:annotation];
         [annotations addObject:annotation];
     }
+    
     CGFloat latitude = [_dataArr[1][@"latitude"] floatValue];
     CGFloat longitude = [_dataArr[1][@"longitude"] floatValue];
     CLLocationCoordinate2D coordinate = {latitude,longitude};
     [_mapView setCenterCoordinate:coordinate animated:YES];
-    MKCoordinateSpan span = {0,0.3};
+    MKCoordinateSpan span = {0.1, 0.25};
     [_mapView setRegion:MKCoordinateRegionMake(coordinate, span) animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    [_mapDelegate getSelectedAnnotation:view];
 }
 
 @end

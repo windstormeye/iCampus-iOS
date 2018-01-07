@@ -10,8 +10,7 @@
 #import "PJAboutViewController.h"
 #import "PJMyLostViewController.h"
 #import "PJUserAandCViewController.h"
-#import "logoutFoot.h"
-
+#import "ICNetworkManager.h"
 #import "iCampus-Swift.h"
 
 @interface PJUserViewController ()
@@ -19,13 +18,14 @@
 @end
 
 @implementation PJUserViewController
-{
-    logoutFoot *_footer;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,27 +33,27 @@
 }
 
 - (void)initView {
-    self.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].name];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"settingXIB" owner:self options:nil];
-    _footer = views.firstObject;
-    self.tableView.tableFooterView = _footer;
-    [_footer.logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
-    _footer.logoutBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [_footer.logoutBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"logout"] style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backBtn;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userDidLogin) name:@"UserDidLoginNotification" object:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            [self toAandC];
+            [self toMyLost];
         }
     }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            [self toMyLost];
+            [self toAandC];
         }
         if (indexPath.row == 1) {
             [self toAbout];
@@ -61,27 +61,42 @@
     }
 }
 
+- (void)userDidLogin{
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", [PJUser currentUser].first_name];
+}
+
 -(void)logout{
     ICLoginViewController *vc = [[NSBundle mainBundle] loadNibNamed:@"ICLoginViewController" owner:nil options:nil].firstObject;
     [self presentViewController:vc animated:YES completion:^{
+        [self.navigationController popViewControllerAnimated:NO];
+        [ICNetworkManager defaultManager].token = @"";
         [PJUser logOut];
+        
+        self.tabBarController.selectedIndex = 0;
     }];
 }
 
 - (void)toAandC {
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"PJUserAandCSB" bundle:nil];
     PJUserAandCViewController *vc = [SB instantiateViewControllerWithIdentifier:@"PJUserAandCViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
     
 - (void)toMyLost {
     PJMyLostViewController *vc = [PJMyLostViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)toAbout {
     PJAboutViewController *vc = [PJAboutViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return false;
 }
 
 @end

@@ -15,7 +15,10 @@
 #import "MJExtension.h"
 #import "PJUser.h"
 #import "PJUIImage+Extension.h"
+#import "PJTapic.h"
 
-
+//友盟U-App
+#import <UMCommon/UMCommon.h>
+#import <UMAnalytics/MobClick.h>
 
 

@@ -7,7 +7,6 @@
 //
 
 #import "PJUserUpdatePWViewController.h"
-#import "logoutFoot.h"
 #import "ICNetworkManager.h"
 
 @interface PJUserUpdatePWViewController () <UITextFieldDelegate>
@@ -15,9 +14,6 @@
 @end
 
 @implementation PJUserUpdatePWViewController
-{
-    logoutFoot *_footer;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,11 +27,29 @@
 - (void)initView {
     _nameTextField.text = [NSString stringWithFormat:@"%@", [PJUser currentUser].email];
     [_oldPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _oldPWTextField.delegate = self;
     [_newnewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _newnewPWTextField.delegate = self;
     [_againNewPWTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    _againNewPWTextField.delegate = self;
+    _againNewPWTextField.tag = 10;
+    
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(rightItemClick)];
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.enabled = NO;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([_oldPWTextField isFirstResponder]) {
+        [_newnewPWTextField becomeFirstResponder];
+    } else if ([_newnewPWTextField isFirstResponder]) {
+        [_againNewPWTextField becomeFirstResponder];
+    }
+    
+    if (textField.tag == 10) {
+        [self updatePw];
+    }
+    return true;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -87,7 +101,8 @@
                               GETParameters:nil
                              POSTParameters:paramters
                                     success:^(NSDictionary *dict) {
-                                        
+                                        [PJHUD showSuccessWithStatus:@"修改成功"];
+                                        [self.navigationController popViewControllerAnimated:YES];
                                     } failure:^(NSError *error) {
                                         NSLog(@"%@", error);
                                     }];
